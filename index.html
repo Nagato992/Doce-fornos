@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Doce Forno | Pastelaria</title>
+<meta name="description" content="Pastéis, bolos, salgados e bebidas. Faz a tua encomenda online na Doce Forno.">
+<meta name="theme-color" content="#e87932">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+ <div class="nav-top">
+  <a class="logo" href="#inicio" aria-label="Doce Forno, início">DOCE <span>FORNO.</span></a>
+  <div class="nav-actions">
+   <button class="btn light hidden" id="installBtn">📲 Instalar app</button>
+   <a class="utility-link" href="#sobre">Sobre nós</a>
+   <a class="utility-link" href="#contacto">Contacto</a>
+   <button class="btn light" id="cartBtn">🛒 Carrinho (<span id="cartCount">0</span>)</button>
+   <button class="btn" id="accountBtn">Entrar</button>
+  </div>
+ </div>
+ <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+  <a href="#inicio">Início</a>
+  <div class="nav-menu"><button class="nav-trigger" aria-expanded="false">Pastelaria <span>⌄</span></button>
+   <div class="dropdown">
+    <a href="#catalogo" data-cat="Todos">Ver toda a pastelaria</a>
+    <a href="#catalogo" data-cat="Pastéis">Pastéis e doces</a>
+    <a href="#catalogo" data-cat="Bolos">Bolos personalizados</a>
+    <a href="#catalogo" data-cat="Bolos">Bolos de aniversário 🎂</a>
+    <a href="#catalogo" data-cat="Salgados">Salgados</a>
+    <a href="#catalogo" data-cat="Bebidas">Bebidas</a>
+   </div>
+  </div>
+  <div class="nav-menu"><button class="nav-trigger" aria-expanded="false">Comprar por ocasião <span>⌄</span></button>
+   <div class="dropdown mega-dropdown">
+    <div><strong>🎃 Épocas especiais</strong><a href="#catalogo" data-cat="Bolos">Doces de Halloween</a><a href="#catalogo" data-cat="Bolos">Bolos temáticos</a></div>
+    <div><strong>🎂 Bolos por ocasião</strong><a href="#catalogo" data-cat="Bolos">Bolos de aniversário</a><a href="#catalogo" data-cat="Bolos">Bolos de casamento</a><a href="#catalogo" data-cat="Bolos">Bolos de baby shower</a><a href="#catalogo" data-cat="Bolos">Bolos para celebrações</a></div>
+    <div><strong>💖 Surpresas</strong><a href="#catalogo" data-cat="Bolos">Caixas de doces</a><a href="#catalogo" data-cat="Pastéis">Doces para oferecer</a><a href="#catalogo" data-cat="Bebidas">Pequeno-almoço</a></div>
+    <div><strong>🌹 Presentes e extras</strong><a href="#mais-ocasioes">Flores e surpresas <small>Em breve</small></a><a href="#mais-ocasioes">Ver todas as ocasiões</a></div>
+   </div>
+  </div>
+ </nav>
+</header>
+
+<main>
+<section class="hero" id="inicio"><div>
+ <div class="kicker">Sabor feito com carinho</div>
+ <h1>O teu próximo momento delicioso começa aqui.</h1>
+ <p>Pastéis, bolos, salgados e muito mais. Escolhe os teus favoritos e faz a tua encomenda online.</p>
+ <button class="btn" id="seeMenu">Ver produtos</button>
+</div><div class="hero-photo" role="img" aria-label="Pastelaria artesanal com bolos e croissants"></div></section>
+
+<section id="catalogo">
+ <div class="section-head"><div><h2>O nosso menu</h2><p>Escolhe o que mais gostas.</p></div><span class="user-tag">12 delícias</span></div>
+ <div class="filters" id="filters"></div>
+ <div class="products" id="products"></div>
+</section>
+
+<section class="reviews">
+ <h2>⭐ Avaliações dos clientes</h2><p class="muted">Já experimentaste? Conta-nos o que achaste.</p>
+ <div class="review-form">
+  <input class="field" id="reviewName" placeholder="O teu nome" autocomplete="name">
+  <select class="field" id="reviewStars"><option value="5">★★★★★ — Excelente</option><option value="4">★★★★☆ — Muito bom</option><option value="3">★★★☆☆ — Bom</option><option value="2">★★☆☆☆ — Razoável</option><option value="1">★☆☆☆☆ — Fraco</option></select>
+  <textarea class="field" id="reviewText" placeholder="Escreve o teu comentário..."></textarea>
+  <button class="btn" id="reviewBtn">Publicar avaliação</button>
+ </div>
+ <div class="review-list" id="reviewList"></div>
+</section>
+
+<section class="info-section" id="sobre">
+ <div class="info-photo" role="img" aria-label="Bolos e pastelaria artesanal"></div>
+ <div><span class="kicker info-kicker">A nossa história</span><h2>Feito com cuidado. Partilhado com alegria.</h2>
+ <p>A Doce Forno é uma pastelaria para tornar os dias comuns e as ocasiões especiais um pouco mais doces. Aqui encontras bolos, pastéis, salgados e outras opções para partilhar com família e amigos.</p>
+ <p>Estamos a construir o nosso menu e a melhorar a experiência de encomenda para que possas escolher os teus favoritos de forma simples.</p>
+ <a class="btn info-link" href="#catalogo">Explorar o menu</a></div>
+</section>
+
+<section class="occasion-strip" id="mais-ocasioes"><div><h2>Uma ocasião especial à vista?</h2><p>Estamos a preparar novas opções para presentes, flores e surpresas. Por enquanto, podes encomendar doces e bolos do nosso menu.</p></div><a class="btn" href="#catalogo">Escolher doces</a></section>
+
+<section class="contact-section" id="contacto"><div><span class="kicker">Estamos aqui para ajudar</span><h2>Fala connosco</h2><p>Queres esclarecer uma dúvida sobre produtos ou uma encomenda? Contacta-nos pelos canais oficiais da Doce Forno.</p></div><div class="contact-card"><strong>📩 Email</strong><p>Adiciona aqui o email oficial da pastelaria.</p><strong>📞 Telefone / WhatsApp</strong><p>Adiciona aqui o número de contacto da pastelaria.</p><small>Os contactos acima são campos de exemplo. Substitui-os pelos dados reais antes de publicar o site.</small></div></section>
+</main>
+<footer>© 2026 Doce Forno · Feito com carinho 🍰 <span><a href="#sobre">Sobre nós</a> · <a href="#contacto">Contacto</a> · <a href="#inicio">Voltar ao topo ↑</a></span></footer>
+
+<!-- Conta -->
+<div class="overlay hidden" id="authOverlay" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+ <div class="modal">
+  <button class="close" data-close="authOverlay" aria-label="Fechar">✕</button>
+  <div class="tabs" id="authTabs">
+   <button class="tab active" data-tab="register">Criar conta</button>
+   <button class="tab" data-tab="login">Entrar</button>
+  </div>
+
+  <div id="registerView">
+   <h2 id="authTitle">Cria a tua conta</h2>
+   <p>O cadastro é obrigatório antes de fazeres uma encomenda.</p>
+   <label for="registerEmail">Email</label>
+   <input class="field" id="registerEmail" type="email" placeholder="teuemail@exemplo.com" autocomplete="email" required>
+   <label for="phone">Número de celular</label>
+   <div class="phone-wrap"><span class="prefix">+258</span><input class="field" id="phone" type="tel" inputmode="numeric" placeholder="84 000 0000" autocomplete="tel-national" maxlength="11"></div>
+   <label for="password">Senha</label>
+   <input class="field" id="password" type="password" placeholder="Mínimo 6 caracteres" autocomplete="new-password">
+   <label for="password2">Confirmar senha</label>
+   <input class="field" id="password2" type="password" placeholder="Repete a senha" autocomplete="new-password">
+   <button class="btn full" id="registerBtn">Criar conta</button>
+   <p class="hint">Enviaremos um código de verificação para o teu email.</p>
+   <div id="verifyBox" class="hidden"><label for="verifyCode">Código de verificação (6 dígitos)</label><input class="field code-input" id="verifyCode" inputmode="numeric" maxlength="6" placeholder="000000"><button class="btn full" id="verifyBtn">Verificar email e activar conta</button></div>
+  </div>
+
+  <div id="loginView" class="hidden">
+   <h2>Bem-vindo de volta</h2>
+   <label for="loginPhone">Número de celular</label>
+   <div class="phone-wrap"><span class="prefix">+258</span><input class="field" id="loginPhone" type="tel" inputmode="numeric" placeholder="84 000 0000" autocomplete="tel-national" maxlength="11"></div>
+   <label for="loginPass">Senha</label>
+   <input class="field" id="loginPass" type="password" autocomplete="current-password">
+   <button class="btn full" id="loginBtn">Entrar</button>
+  </div>
+  <p class="hint demo-note">Modo demonstração: os dados ficam guardados neste dispositivo.</p>
+ </div>
+</div>
+
+<!-- Minha conta -->
+<div class="overlay hidden" id="accountOverlay" role="dialog" aria-modal="true">
+ <div class="modal">
+  <button class="close" data-close="accountOverlay" aria-label="Fechar">✕</button>
+  <h2>A minha conta</h2>
+  <p id="accountPhone"></p>
+  <h3 class="sub">Os meus pedidos</h3>
+  <div id="ordersList"></div>
+  <button class="btn dark full" id="logoutBtn">Terminar sessão</button>
+ </div>
+</div>
+
+<!-- Carrinho -->
+<aside class="cart-panel" id="cartPanel" aria-label="Carrinho">
+ <div class="cart-top"><h2>O teu carrinho</h2><button class="btn light" id="cartClose">Fechar ✕</button></div>
+ <div id="cartItems"></div>
+ <div class="total"><span>Subtotal</span><span id="cartTotal">0 MT</span></div>
+ <button class="btn full" id="checkoutBtn">Continuar para entrega</button>
+</aside>
+
+<!-- Finalizar pedido -->
+<div class="overlay hidden" id="checkoutOverlay" role="dialog" aria-modal="true" aria-labelledby="coTitle">
+ <div class="modal wide">
+  <button class="close" data-close="checkoutOverlay" aria-label="Fechar">✕</button>
+  <h2 id="coTitle">Finalizar pedido</h2>
+  <div class="steps-mini" id="coSteps"><span class="on">Entrega</span><span>Pagamento</span><span>Confirmar</span></div>
+
+  <!-- 1 Entrega -->
+  <div id="coStep1">
+   <label for="delName">Nome de quem recebe</label>
+   <input class="field" id="delName" autocomplete="name">
+   <div class="two">
+    <div><label for="delCity">Cidade</label><select class="field" id="delCity"><option>Maputo</option><option>Matola</option><option>Outra</option></select></div>
+    <div><label for="delArea">Bairro</label><input class="field" id="delArea" placeholder="Ex.: Polana"></div>
+   </div>
+   <label for="delStreet">Rua / Avenida e nº da casa</label>
+   <input class="field" id="delStreet" autocomplete="street-address">
+   <label for="delRef">Ponto de referência</label>
+   <input class="field" id="delRef" placeholder="Ex.: ao lado da farmácia">
+   <label for="delPhone">Contacto para a entrega</label>
+   <input class="field" id="delPhone" type="tel" inputmode="numeric">
+   <button class="btn light full" id="geoBtn">📍 Usar a minha localização atual</button>
+   <div class="hint" id="geoInfo"></div>
+   <button class="btn full" id="toPay">Continuar para pagamento</button>
+  </div>
+
+  <!-- 2 Pagamento -->
+  <div id="coStep2" class="hidden">
+   <div class="pay-options" id="payOptions">
+    <label class="pay"><input type="radio" name="pay" value="mpesa"><span class="pay-box"><b>M-Pesa</b><small>Vodacom · 84 / 85</small></span></label>
+    <label class="pay"><input type="radio" name="pay" value="emola"><span class="pay-box"><b>e-Mola</b><small>Movitel · 86 / 87</small></span></label>
+    <label class="pay"><input type="radio" name="pay" value="card"><span class="pay-box"><b>Cartão</b><small>Visa / Mastercard</small></span></label>
+   </div>
+   <div id="payMobile" class="hidden">
+    <label for="payNumber" id="payNumberLabel">Número</label>
+    <input class="field" id="payNumber" type="tel" inputmode="numeric" maxlength="11">
+    <div class="hint">Vais receber um pedido no telemóvel. Confirma com o teu PIN.</div>
+   </div>
+   <div id="payCard" class="hidden">
+    <label for="cardName">Nome no cartão</label>
+    <input class="field" id="cardName" autocomplete="cc-name">
+    <label for="cardNumber">Número do cartão</label>
+    <input class="field" id="cardNumber" inputmode="numeric" maxlength="23" placeholder="0000 0000 0000 0000" autocomplete="cc-number">
+    <div class="two">
+     <div><label for="cardExp">Validade</label><input class="field" id="cardExp" inputmode="numeric" maxlength="5" placeholder="MM/AA" autocomplete="cc-exp"></div>
+     <div><label for="cardCvv">CVV</label><input class="field" id="cardCvv" type="password" inputmode="numeric" maxlength="4" autocomplete="cc-csc"></div>
+    </div>
+   </div>
+   <div class="row-btns"><button class="btn light" id="backToDel">Voltar</button><button class="btn" id="toConfirm">Rever pedido</button></div>
+  </div>
+
+  <!-- 3 Confirmar -->
+  <div id="coStep3" class="hidden">
+   <div id="summary"></div>
+   <div class="row-btns"><button class="btn light" id="backToPay">Voltar</button><button class="btn" id="payBtn">Pagar e enviar pedido</button></div>
+  </div>
+
+  <!-- A processar -->
+  <div id="coProcessing" class="hidden center">
+   <div class="spinner"></div><h3 id="procTitle">A processar pagamento…</h3><p id="procText"></p>
+  </div>
+
+  <!-- Sucesso -->
+  <div id="coDone" class="hidden center">
+   <div class="big-ok">✓</div><h3>Pedido enviado!</h3><p id="doneText"></p>
+   <a class="btn light full" id="mailBtn" style="display:block;text-align:center;text-decoration:none">✉️ Enviar pedido por email</a>
+   <button class="btn full" id="doneBtn">Voltar ao menu</button>
+  </div>
+ </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
